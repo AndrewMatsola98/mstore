@@ -1,30 +1,30 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Заказы')
+@section('title', 'Закази')
 
 @section('content')
     <div class="col-md-12">
-        <h1>Заказы</h1>
+        <h1>Закази</h1>
         <table class="table">
             <tbody>
             <tr>
                 <th>
-                    #
+                    №
                 </th>
                 <th>
-                    Имя
+                    Ім'я
                 </th>
                 <th>
-                    Телефон
+                    Номер телефону
                 </th>
                 <th>
-                    Когда отправлен
+                    Куди відправлений
                 </th>
                 <th>
-                    Сумма
+                    Загальна ціна
                 </th>
                 <th>
-                    Действия
+                    Дії
                 </th>
             </tr>
             @foreach($orders as $order)
@@ -33,7 +33,7 @@
                     <td>{{ $order->name }}</td>
                     <td>{{ $order->phone }}</td>
                     <td>{{ $order->created_at->format('H:i d/m/Y') }}</td>
-                    <td>{{ $order->calculateFullSum() }} руб.</td>
+                    <td>{{ $order->calculateFullSum() }} грн.</td>
                     <td>
                         <div class="btn-group" role="group">
                             <a class="btn btn-success" type="button"
@@ -42,7 +42,7 @@
                                @else
                                 href="{{ route('person.orders.show', $order) }}"
                                 @endadmin
-                            >Открыть</a>
+                            >Відкрити</a>
                         </div>
                     </td>
                 </tr>

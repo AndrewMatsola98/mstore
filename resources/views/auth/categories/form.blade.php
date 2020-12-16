@@ -1,7 +1,7 @@
 @extends('auth.layouts.master')
 
 @isset($category)
-    @section('title', 'Редактировать категорию ' . $category->name)
+    @section('title', 'Змінити Категорію ' . $category->name)
 @else
     @section('title', 'Создать категорию')
 @endisset
@@ -9,9 +9,9 @@
 @section('content')
     <div class="col-md-12">
         @isset($category)
-            <h1>Редактировать Категорию <b>{{ $category->name }}</b></h1>
+            <h1>Змінити Категорію <b>{{ $category->name }}</b></h1>
         @else
-            <h1>Добавить Категорию</h1>
+            <h1>Добавити Категорію</h1>
         @endisset
 
         <form method="POST" enctype="multipart/form-data"
@@ -38,7 +38,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Название: </label>
+                    <label for="name" class="col-sm-2 col-form-label">Назва: </label>
                     <div class="col-sm-6">
                         @error('name')
                             <div class="alert alert-danger">{{ $message }} </div>
@@ -49,7 +49,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Описание: </label>
+                    <label for="description" class="col-sm-2 col-form-label">Опис: </label>
                     <div class="col-sm-6">
                         @error('description')
                             <div class="alert alert-danger">{{ $message }} </div>

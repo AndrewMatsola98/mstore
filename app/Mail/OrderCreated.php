@@ -10,7 +10,6 @@ use Illuminate\Queue\SerializesModels;
 class OrderCreated extends Mailable
 {
     use Queueable, SerializesModels;
-
     protected $name;
     protected $order;
 

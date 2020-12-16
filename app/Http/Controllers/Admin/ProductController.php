@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Image\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -43,11 +44,21 @@ class ProductController extends Controller
     {
         $params = $request->all();
 
-        unset($params['image']);
-        if ($request->has('image')) {
-            $params['image'] = $request->file('image')->store('products');
+        
+        // if ($request->has('image')) {
+        //     $params['image'] = $request->file('image')->store('/public/products');
+        // }
+       
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $path = 'products/';
+            if(!Storage::exists($path)) {
+                Storage::makeDirectory($path);
+            }
+            $file->move(storage_path("app/public/$path"), $name);
+            $params['image'] = $path.$name;
         }
-
 
         Product::create($params);
         return redirect()->route('products.index');

@@ -1,7 +1,7 @@
 @extends('auth.layouts.master')
 
 @isset($product)
-    @section('title', 'Редактировать товар ' . $product->name)
+    @section('title', 'Редагувати товар ' . $product->name)
 @else
     @section('title', 'Создать товар')
 @endisset
@@ -9,9 +9,9 @@
 @section('content')
     <div class="col-md-12">
         @isset($product)
-            <h1>Редактировать товар <b>{{ $product->name }}</b></h1>
+            <h1>Редагувати товар <b>{{ $product->name }}</b></h1>
         @else
-            <h1>Добавить товар</h1>
+            <h1>Добавити товар</h1>
         @endisset
         <form method="POST" enctype="multipart/form-data"
               @isset($product)
@@ -35,7 +35,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Название: </label>
+                    <label for="name" class="col-sm-2 col-form-label">Назва: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'name'])
                         <input type="text" class="form-control" name="name" id="name"
@@ -44,7 +44,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="category_id" class="col-sm-2 col-form-label">Категория: </label>
+                    <label for="category_id" class="col-sm-2 col-form-label">Категорія: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'category_id'])
                         <select name="category_id" id="category_id" class="form-control">
@@ -62,7 +62,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Описание: </label>
+                    <label for="description" class="col-sm-2 col-form-label">Опис: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'description'])
                         <textarea name="description" id="description" cols="72"
@@ -80,7 +80,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="price" class="col-sm-2 col-form-label">Цена: </label>
+                    <label for="price" class="col-sm-2 col-form-label">Ціна: </label>
                     <div class="col-sm-2">
                         @include('auth.layouts.error', ['fieldName' => 'price'])
                         <input type="text" class="form-control" name="price" id="price"
@@ -113,7 +113,7 @@
                     </div>
                     <br>
                 @endforeach
-                <button class="btn btn-success">Сохранить</button>
+                <button class="btn btn-success">Зберегти</button>
             </div>
         </form>
     </div>

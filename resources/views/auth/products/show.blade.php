@@ -12,7 +12,7 @@
                     Поле
                 </th>
                 <th>
-                    Значение
+                    Значення
                 </th>
             </tr>
             <tr>
@@ -24,11 +24,11 @@
                 <td>{{ $product->code }}</td>
             </tr>
             <tr>
-                <td>Название</td>
+                <td>Назва</td>
                 <td>{{ $product->name }}</td>
             </tr>
             <tr>
-                <td>Описание</td>
+                <td>Опис/td>
                 <td>{{ $product->description }}</td>
             </tr>
             <tr>
@@ -36,7 +36,7 @@
                 <td><img src="{{ Storage::url($product->image) }}" height="240px"></td>
             </tr>
             <tr>
-                <td>Категория</td>
+                <td>Категорія</td>
                 <td>{{ $product->category->name }}</td>
             </tr>
                 <tr>

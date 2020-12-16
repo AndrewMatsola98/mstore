@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
 class CategoriesTableSeeder extends Seeder
 {
     /**
@@ -14,7 +13,7 @@ class CategoriesTableSeeder extends Seeder
     {
         DB::table('categories')->insert([
             ['name'=> 'Мобільні телефони', 'code'=> 'mobiles', 'description'=> 'Опис мобільних телефонів'],
-            ['name'=> 'Портативні техніка', 'code'=> 'portable', 'description'=> 'Опис для розділу портативної техніки'],
+            ['name'=> 'Портативна техніка', 'code'=> 'portable', 'description'=> 'Опис для розділу портативної техніки'],
             ['name'=> 'Побутова техніка', 'code'=> 'appliances', 'description'=> 'Розділ з побутовою технікою'],
         ]);
     }

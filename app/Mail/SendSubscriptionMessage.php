@@ -11,7 +11,6 @@ use Illuminate\Queue\SerializesModels;
 class SendSubscriptionMessage extends Mailable
 {
     use Queueable, SerializesModels;
-
     protected $product;
 
     /**

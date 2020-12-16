@@ -13,10 +13,10 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>Название</th>
-                            <th>Кол-во</th>
-                            <th>Цена</th>
-                            <th>Стоимость</th>
+                            <th>Назва</th>
+                            <th>Кількість</th>
+                            <th>Ціна</th>
+                            <th>Вартість</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,13 +30,13 @@
                                     </a>
                                 </td>
                                 <td><span class="badge">1</span></td>
-                                <td>{{ $product->price }} руб.</td>
-                                <td>{{ $product->getPriceForCount()}} руб.</td>
+                                <td>{{ $product->price }} грн.</td>
+                                <td>{{ $product->getPriceForCount()}} грн.</td>
                             </tr>
                         @endforeach
                         <tr>
-                            <td colspan="3">Общая стоимость:</td>
-                            <td>{{ $order->calculateFullSum() }} руб.</td>
+                            <td colspan="3">Загальна вартість:</td>
+                            <td>{{ $order->calculateFullSum() }} грн.</td>
                         </tr>
                         </tbody>
                     </table>

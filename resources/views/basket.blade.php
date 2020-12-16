@@ -4,15 +4,15 @@
 
 @section('content')
         <h1>Корзина</h1>
-        <p>Оформление заказа</p>
+        <p>Оформлення заказу</p>
         <div class="panel">
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Название</th>
-                    <th>Кол-во</th>
-                    <th>Цена</th>
-                    <th>Стоимость</th>
+                    <th>Назва товару</th>
+                    <th>Кількість</th>
+                    <th>Ціна</th>
+                    <th>Всього</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,19 +42,19 @@
                                 </form>
                             </div>
                         </td>
-                        <td>{{$product->price}} руб.</td>
-                        <td>{{$product->getPriceForCount()}} руб.</td>
+                        <td>{{$product->price}} грн.</td>
+                        <td>{{$product->getPriceForCount()}} грн.</td>
                     </tr>
                  @endforeach
                 <tr>
-                    <td colspan="3">Общая стоимость:</td>
-                    <td>{{ $order->getFullSum() }} руб.</td>
+                    <td colspan="3">Загальна вартість:</td>
+                    <td>{{ $order->getFullSum() }} грн.</td>
                 </tr>
                 </tbody>
             </table>
             <br>
             <div class="btn-group pull-right" role="group">
-                <a type="button" class="btn btn-success" href="{{route('basket-place')}}">Оформить заказ</a>
+                <a type="button" class="btn btn-success" href="{{route('basket-place')}}">Оформити замовлення</a>
             </div>
         </div>
 @endsection

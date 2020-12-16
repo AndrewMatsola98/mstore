@@ -1,33 +1,33 @@
 @extends('auth.layouts.master')
 
-@section('title', 'Товары')
+@section('title', 'Товари')
 
 @section('content')
     <div class="col-md-12">
-        <h1>Товары</h1>
+        <h1>Товари</h1>
         <table class="table">
             <tbody>
             <tr>
                 <th>
-                    #
+                    №
                 </th>
                 <th>
                     Код
                 </th>
                 <th>
-                    Название
+                    Назва
                 </th>
                 <th>
-                    Категория
+                    Категорія
                 </th>
                 <th>
-                    Цена
+                    Ціна
                 </th>
                 <th>
                     Кількість
                 </th>
                 <th>
-                    Действия
+                    Дії
                 </th>
             </tr>
             @foreach($products as $product)
@@ -42,12 +42,12 @@
                         <div class="btn-group" role="group">
                             <form action="{{ route('products.destroy', $product) }}" method="POST">
                                 <a class="btn btn-success" type="button"
-                                   href="{{ route('products.show', $product) }}">Открыть</a>
+                                   href="{{ route('products.show', $product) }}">Відкрити</a>
                                 <a class="btn btn-warning" type="button"
-                                   href="{{ route('products.edit', $product) }}">Редактировать</a>
+                                   href="{{ route('products.edit', $product) }}">Змінити</a>
                                 @csrf
                                 @method('DELETE')
-                                <input class="btn btn-danger" type="submit" value="Удалить"></form>
+                                <input class="btn btn-danger" type="submit" value="Видалити"></form>
                         </div>
                     </td>
                 </tr>
@@ -55,6 +55,6 @@
             </tbody>
         </table>
         {{ $products->links()}}
-        <a class="btn btn-success" type="button" href="{{ route('products.create') }}">Добавить товар</a>
+        <a class="btn btn-success" type="button" href="{{ route('products.create') }}">Добавити товар</a>
     </div>
 @endsection
