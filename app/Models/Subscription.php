@@ -14,11 +14,7 @@ class Subscription extends Model
     {
         return $query->where('status', 0)->where('product_id', $productId);
     }
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
-
+    
     public static function sendEmailsBySubscription(Product $product)
     {
         $subscriptions = self::activeByProductId($product->id)->get();

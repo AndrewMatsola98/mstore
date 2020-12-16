@@ -18,12 +18,7 @@ class OrderCreated extends Mailable
      * @param $name
      * @param $order
      */
-    public function __construct($name, Order $order)
-    {
-        $this->name = $name;
-        $this->order = $order;
-    }
-
+    
 
     /**
      * Build the message.
